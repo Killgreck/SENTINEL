@@ -1,0 +1,34 @@
+# Configuración de SENTINEL Gym
+simulation:
+  initial_capital_usd: 100.0
+  base_currency: "USDT"
+  fee_rate: 0.001  # 0.1% (Standard Binance fee)
+  slippage: 0.0005 # 0.05% (Simulación de impacto de mercado)
+
+assets:
+  - symbol: "BTCUSDT"
+    weight: 0.5
+  - symbol: "ETHUSDT"
+    weight: 0.3
+  - symbol: "SOLUSDT"
+    weight: 0.2
+
+logic:
+  mode: "swing" # Opción de cambio a "hft"
+  update_interval_minutes: 60
+  risk_per_trade_pct: 0.1 # Arriesgar el 10% del capital por trade ($10)
+  hold_penalty_rate: 0.05 # 5% del cash se pierde por cada HOLD (penaliza inactividad)
+
+scoring:
+  initial_score: 1000      # Score inicial
+  gain_multiplier: 100     # score += reward * 100 (ganancias)
+  loss_multiplier: 150     # score += reward * 150 (pérdidas penalizan 1.5x más)
+  penalty_multiplier: 50   # score -= (penalty/capital) * 50
+  min_score: 0
+  max_score: 1000
+
+models:
+  primary: "claude-3-5-sonnet"
+  fast_path: "claude-3-haiku"
+  sentiment: "gemini-1.5-flash"
+

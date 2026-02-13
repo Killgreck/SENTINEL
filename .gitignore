@@ -1,0 +1,51 @@
+# ═══════════════════════════════════════
+#  SENTINEL .gitignore
+# ═══════════════════════════════════════
+
+# ── Secrets ──
+.env
+*.pem
+*.key
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# ── Data (too large for git) ──
+data/market/raw/*.parquet
+data/sentimental/raw/**/*.csv
+data/sentimental/raw/merged/
+data/sentimental/raw/annotated/
+
+# ── Results ──
+results/
+*.csv
+
+# ── SQLite caches ──
+*.db
+*.sqlite
+*.sqlite3
+
+# ── IDE ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ── AWS ──
+.aws/
+aws_diagnostics_output.txt
+
+# ── Agent workspace ──
+.agent/
+.gemini/

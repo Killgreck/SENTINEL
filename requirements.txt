@@ -1,0 +1,17 @@
+# SENTINEL Trading System - Dependencies
+# ─── Core Data Pipeline ───
+pandas
+pyarrow
+yfinance
+python-dotenv
+boto3
+
+# ─── Sentiment / HuggingFace ───
+huggingface_hub
+
+# ─── Future: Gym / Backtesting (Fase 2) ───
+# numpy
+# scikit-learn
+# gymnasium
+# xgboost
+# matplotlib
